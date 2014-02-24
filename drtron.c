@@ -13,6 +13,7 @@
 #include <form.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 #include "drtron.h"
 
@@ -42,7 +43,7 @@ int main( int argc, char **argv )
     mvprintw( LINES / 2 + 1, (COLS - 18) / 2, "Because BM is crap" );
     attroff( COLOR_PAIR(2) );
     refresh();
-    sleep(2);
+    usleep(2000);
     clear();
 
     //Prime the loop with NEW so the user can set up the game the first time around
@@ -645,7 +646,6 @@ enum playgame_ret ingame_menu()
     MENU *ingame_menu;    //Actual menu
     const int NUM_ITEMS = 4;
     ITEM *items[NUM_ITEMS + 1]; //Null terminated array of items for menu
-    ITEM *cur_item;
     bool complete = false; //Is user done?
     //Map item index to return value
     const enum playgame_ret USER_OPT[] = { RESUME, REPEAT, NEW, EXIT };
