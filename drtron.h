@@ -1,6 +1,6 @@
 /*=============================================================================
 #     FileName: drtron.h
-#         Desc: 
+#         Desc:
 #       Author: Scott Linder
 #        Email: scott <at> hamstercafe.com
 #     HomePage: www.hamstercafe.com
@@ -56,17 +56,17 @@ typedef struct {
 //Hold maps and dimensions thereof
 typedef struct {
     //Dimensions
-    int width, height; 
+    int width, height;
     /*Map is represented as array in the following manner:
     * Ex. 3x3 map -> tiles[9]
     *       [0][1][2]
     *       [3][4][5]
-    *       [6][7][8] 
+    *       [6][7][8]
     * Base is map without any players and is used for drawing only
     * Pl_col is map of collisions: it "overlays" base and each position contains true(colliding tile) or false (non-colliding tile)
-    */ 
+    */
     char *base;
-    bool *pl_col; 
+    bool *pl_col;
 } map_t;
 
 //Represents one "node" of a player's "worm"
@@ -103,9 +103,9 @@ typedef struct {
 } player_t;
 
 // PROTOTYPES //
-void get_new_settings( settings_t* );
-void cleanup( settings_t* );
-enum playgame_ret play_game( settings_t* );
-void draw_map( map_t, player_t*, int );
-enum playgame_ret ingame_menu( void );
-void cleanup_game( map_t*, player_t[], int );
+void get_new_settings(settings_t*);
+void cleanup(settings_t*);
+enum playgame_ret play_game(settings_t*);
+void draw_map(map_t, player_t*, int);
+enum playgame_ret ingame_menu(void);
+void cleanup_game(map_t*, player_t[], int);
