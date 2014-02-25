@@ -104,7 +104,7 @@ typedef struct {
 
 // PROTOTYPES //
 void get_new_settings(settings_t*);
-void cleanup(settings_t*);
+void cleanup_settings(settings_t*);
 enum playgame_ret play_game(settings_t*);
 void draw_map(map_t, player_t*, int);
 enum playgame_ret ingame_menu(void);
